@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DwarCrafts Admin Dashboard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<style>
+body { padding: 20px; background: #f8f9fa; }
+.card { margin-bottom: 20px; }
+img.product-img { max-width: 100px; border-radius: 5px; }
+.drag-drop { border: 2px dashed #ccc; padding: 20px; text-align: center; cursor: pointer; border-radius: 5px; background: #f9f9f9; margin-bottom: 10px; }
+.drag-drop.dragover { background: #e3f2fd; border-color: #2196f3; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-4">DwarCrafts Admin Dashboard</h1>
+
+    <!-- CATEGORY MANAGEMENT -->
+    <div class="card p-3">
+        <h3>Manage Categories</h3>
+        <input type="text" id="newCategory" placeholder="New category name" class="form-control mb-2">
+        <button class="btn btn-primary mb-2" id="addCategoryBtn">Add Category</button>
+        <ul id="categoryList" class="list-group"></ul>
+    </div>
+
+    <!-- PRODUCT MANAGEMENT -->
+    <div class="card p-3">
+        <h3>Upload / Edit Product</h3>
+        <input type="text" id="productName" placeholder="Product Name" class="form-control mb-2">
+        <textarea id="productDesc" placeholder="Product Description" class="form-control mb-2"></textarea>
+        <input type="number" id="productPrice" placeholder="Price" class="form-control mb-2">
+        <select id="productCategory" class="form-select mb-2"></select>
+
+        <div id="dragDrop" class="drag-drop">Drag & Drop Product Image Here or Click to Upload</div>
+        <input type="file" id="productImage" style="display:none;">
+        <img id="previewImg" src="" alt="" class="mb-2 product-img" style="display:none;">
+
+        <button class="btn btn-success mb-2" id="uploadProductBtn">Upload Product</button>
+        <ul id="productList" class="list-group"></ul>
+    </div>
+
+    <!-- ORDER MANAGEMENT -->
+    <div class="card p-3">
+        <h3>Orders</h3>
+        <input type="text" id="orderSearch" placeholder="Search by customer or product" class="form-control mb-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Tracking History</th>
+                    <th>Update Status</th>
+                </tr>
+            </thead>
+            <tbody id="ordersTable"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- LINK TO admin.js -->
+<script type="module" src="admin.js"></script>
+</body>
+</html>

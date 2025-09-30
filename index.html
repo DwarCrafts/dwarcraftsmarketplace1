@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DwarCrafts Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-green-700 text-white p-4 md:p-6 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <img src="logo.png" alt="DwarCrafts Logo" class="h-12 w-12 rounded-full border-2 border-white" />
+      <h1 class="text-xl md:text-2xl font-bold">DwarCrafts Marketplace</h1>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#about" class="hover:text-yellow-300">About Us</a>
+      <a href="#why-choose" class="hover:text-yellow-300">Why Choose Us</a>
+      <a href="#categories" class="hover:text-yellow-300">Categories</a>
+      <a href="shop.html" class="hover:text-yellow-300">Shop</a>
+      <a href="track.html" class="hover:text-yellow-300">Track Order</a>
+      <a href="#contact" class="hover:text-yellow-300">Contact</a>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div x-data="{open:false}" class="md:hidden">
+      <button @click="open=!open" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div x-show="open" class="absolute right-4 mt-2 bg-green-800 text-white rounded shadow-md py-3 px-5 space-y-3">
+        <a href="#about" class="block">About Us</a>
+        <a href="#why-choose" class="block">Why Choose Us</a>
+        <a href="#categories" class="block">Categories</a>
+        <a href="shop.html" class="block">Shop</a>
+        <a href="track.html" class="block">Track Order</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative h-96 flex items-center justify-center text-center text-white">
+    <img src="hero.jpg" alt="Hero" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+    <div class="relative z-10 p-8">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Karibu DwarCrafts</h2>
+      <p class="text-lg md:text-xl">Where Ideas Take Form — Custom Creativity & Marketplace Power</p>
+      <a href="#categories" class="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-16 px-6 md:px-16 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+    <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
+      At DwarCrafts, we bring your imagination to life. From handcrafted furniture and unique decor to AI-powered design generation and a thriving marketplace — we exist to make creativity accessible to everyone. Our mission is to transform ideas into products that inspire, empower, and deliver value.
+    </p>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-choose" class="py-16 px-6 md:px-16 bg-gray-100">
+    <h2 class="text-3xl font-bold mb-10 text-center">Why Choose Us</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ We Deliver Worldwide</h3>
+        <p>Enjoy doorstep delivery on time, every time, anywhere.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Custom-Made Designs</h3>
+        <p>Upload your design or picture and we’ll craft it exactly how you want.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Secure Payments</h3>
+        <p>Pay safely via M-Pesa, card, or integrated gateways with confidence.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Marketplace Power</h3>
+        <p>Access a growing network of dropshipping suppliers and sellers.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Affordable Prices</h3>
+        <p>We cut costs without cutting quality — best value for your money.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ AI-Powered Creativity</h3>
+        <p>Generate unique ideas and product previews instantly with AI.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Reliable Customer Support</h3>
+        <p>Our team is always available to assist you via WhatsApp or email.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Wide Product Variety</h3>
+        <p>From furniture to crafts, decor, and more — everything in one place.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Trusted by Creators</h3>
+        <p>We empower local artisans and global suppliers to showcase their products.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✅ Fast Order Processing</h3>
+        <p>Your orders are handled quickly and efficiently for faster delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="py-16 px-6 md:px-16 bg-white">
+    <h2 class="text-3xl font-bold mb-6 text-center">View Categories</h2>
+    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <a href="shop.html?category=Furniture" class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center transition">
+        <img src="furniture.png" alt="Furniture" class="h-20 mx-auto mb-4">
+        <h3 class="font-semibold">Furniture</h3>
+      </a>
+      <a href="shop.html?category=Decor" class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center transition">
+        <img src="decor.png" alt="Decor" class="h-20 mx-auto mb-4">
+        <h3 class="font-semibold">Decor</h3>
+      </a>
+      <a href="shop.html?category=WallArt" class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center transition">
+        <img src="wallart.png" alt="Wall Art" class="h-20 mx-auto mb-4">
+        <h3 class="font-semibold">Wall Art</h3>
+      </a>
+      <a href="generator.html" class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center transition">
+        <img src="customize.png" alt="Customize" class="h-20 mx-auto mb-4">
+        <h3 class="font-semibold">Customize</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-50 py-16 px-6 md:px-16">
+    <h2 class="text-3xl font-bold mb-10 text-center">What Our Customers Say</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="bg-white p-6 rounded-xl shadow-md text-center">
+        <p class="italic text-lg">“I uploaded my design and DwarCrafts made it exactly how I imagined. Absolutely love it!”</p>
+        <h4 class="mt-4 font-semibold">— Velma A.</h4>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center">
+        <p class="italic text-lg">“Fast delivery and top-notch customer service. I recommend DwarCrafts to anyone.”</p>
+        <h4 class="mt-4 font-semibold">— Brian O.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="bg-green-700 text-white py-10 px-6 md:px-16">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-lg mb-2">Contact Us</h3>
+        <p>WhatsApp: <a href="https://wa.me/254714129889" class="underline">0714 129 889</a></p>
+        <p>Instagram: <a href="https://instagram.com/dwarcrafts" class="underline">@dwarcrafts</a></p>
+        <p>TikTok: <a href="https://tiktok.com/@dwarcrafts" class="underline">@dwarcrafts</a></p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Payments</h3>
+        <p>M-Pesa Paybill: <strong>793174</strong></p>
+        <p>Account: <strong>0111506427</strong></p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2">Our Mission</h3>
+        <p>To be Africa’s leading hub for creativity, commerce, and custom design.</p>
+      </div>
+    </div>
+    <p class="text-center mt-8 text-sm">&copy; 2025 DwarCrafts. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
+
