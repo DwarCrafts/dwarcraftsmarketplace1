@@ -5,96 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DwarCrafts Marketplace</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    /* Simple logo animation */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .hero-logo {
+      animation: pulse 3s infinite;
+    }
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px #999;
+      z-index: 100;
+    }
+    .whatsapp-float i {
+      margin-top: 16px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a2d04a36d2.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-green-700 text-white p-6 flex justify-between items-center">
+  <header class="bg-green-700 text-white p-6 flex justify-between items-center shadow-lg">
     <div class="flex items-center space-x-3">
-      <img src="logo.png" alt="DwarCrafts Logo" class="h-12 w-12 rounded-full border-2 border-white" />
+      <img src="logo.png" alt="DwarCrafts Logo" class="h-12 w-12 rounded-full border-2 border-white hero-logo" />
       <h1 class="text-2xl font-bold">DwarCrafts Marketplace</h1>
     </div>
-    <nav class="space-x-6">
+    <nav class="space-x-6 font-medium">
       <a href="index.html" class="hover:text-yellow-300">Home</a>
       <a href="shop.html" class="hover:text-yellow-300">Shop</a>
-      <a href="generator.html" class="hover:text-yellow-300">Generator</a>
+      <a href="generator.html" class="hover:text-yellow-300">Customize Order</a>
       <a href="track.html" class="hover:text-yellow-300">Track</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="bg-cover bg-center h-96 flex items-center justify-center text-center text-white" style="background-image: url('hero.jpg');">
-    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-      <h2 class="text-4xl font-bold mb-4">Karibu DwarCrafts</h2>
-      <p class="text-lg">Where Ideas Take Form — Custom Creativity & Marketplace Power</p>
-      <a href="shop.html" class="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500">Shop Now</a>
+  <section class="relative bg-cover bg-center h-[32rem] flex items-center justify-center text-center text-white" style="background-image: url('hero.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 p-8">
+      <img src="logo.png" alt="DwarCrafts Logo" class="mx-auto h-24 w-24 rounded-full border-4 border-white mb-6 hero-logo" />
+      <h2 class="text-5xl font-extrabold mb-4">Karibu DwarCrafts</h2>
+      <p class="text-xl mb-6">Where Ideas Take Form — Custom Creativity & Marketplace Power</p>
+      <a href="shop.html" class="mt-4 inline-block bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500">Shop Now</a>
     </div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-16 px-6 md:px-16 bg-white">
-    <h2 class="text-3xl font-bold mb-6 text-center">About Us</h2>
+  <section id="about" class="py-20 px-6 md:px-16 bg-white">
+    <h2 class="text-4xl font-bold mb-8 text-center text-green-700">About Us</h2>
     <p class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed text-center">
-      At DwarCrafts, we bring your imagination to life. From customized handcrafted furniture and unique decor to AI-powered design generation and a thriving marketplace, we exist to make creativity accessible to everyone. Our mission is to transform ideas into products that inspire, empower, and deliver value.
+      At <strong>DwarCrafts</strong>, we bring your imagination to life. From customized handcrafted furniture 
+      and unique décor to AI-powered design generation and a thriving marketplace, 
+      we exist to make creativity accessible to everyone.
     </p>
   </section>
 
   <!-- Why Choose Us -->
-  <section id="why-choose" class="py-16 px-6 md:px-16 bg-gray-100">
-    <h2 class="text-3xl font-bold mb-6 text-center">Why Choose Us</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ Custom-Made Designs</h3>
+  <section id="why-choose" class="py-20 px-6 md:px-16 bg-gray-100">
+    <h2 class="text-4xl font-bold mb-12 text-center text-green-700">Why Choose Us</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">✨ Custom-Made Designs</h3>
         <p>Upload your design or picture and we’ll craft it exactly how you want.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ Secure Payments</h3>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">🔒 Secure Payments</h3>
         <p>Pay safely via M-Pesa, card, or integrated gateways with confidence.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ Marketplace Power</h3>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">🌍 Marketplace Power</h3>
         <p>Access a growing network of dropshipping suppliers and sellers.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ Affordable Prices</h3>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">💰 Affordable Prices</h3>
         <p>We cut costs without cutting quality — best value for your money.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ AI-Powered Creativity</h3>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">🤖 AI-Powered Creativity</h3>
         <p>Generate unique ideas and product previews instantly with AI.</p>
       </div>
-      <div class="p-6 bg-white rounded-xl shadow-md">
-        <h3 class="font-semibold text-lg mb-2">✅ Reliable Customer Support</h3>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">📞 Reliable Support</h3>
         <p>Our team is always available to assist you via WhatsApp or email.</p>
       </div>
     </div>
   </section>
 
-  <!-- Categories (No images, just clean text cards) -->
-  <section id="categories" class="py-16 px-6 md:px-16 bg-white">
-    <h2 class="text-3xl font-bold mb-6 text-center">View Categories</h2>
-    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-      <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
+  <!-- Categories -->
+  <section id="categories" class="py-20 px-6 md:px-16 bg-white">
+    <h2 class="text-4xl font-bold mb-12 text-center text-green-700">Browse Categories</h2>
+    <div id="category-grid" class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <!-- Categories will later load from Firestore dynamically -->
+      <div class="p-8 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
         <h3 class="font-semibold">Furniture</h3>
       </div>
-      <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
+      <div class="p-8 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
         <h3 class="font-semibold">Decor</h3>
       </div>
-      <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
+      <div class="p-8 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
         <h3 class="font-semibold">Wall Art</h3>
       </div>
-      <div class="p-6 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
+      <div class="p-8 bg-gray-100 rounded-xl shadow hover:shadow-lg cursor-pointer text-center">
         <h3 class="font-semibold">Customize</h3>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <footer id="contact" class="bg-green-700 text-white py-10 px-6 md:px-16">
+  <!-- Footer -->
+  <footer id="contact" class="bg-green-700 text-white py-12 px-6 md:px-16">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
       <div>
         <h3 class="font-bold text-lg mb-2">Contact Us</h3>
-        <p>WhatsApp: <a href="https://wa.me/254714129889" class="underline">0714 129 889</a></p>
+        <p>WhatsApp: <a href="https://wa.me/254111506427" class="underline">0111 506 427</a></p>
         <p>Instagram: <a href="https://instagram.com/dwarcrafts" class="underline">@dwarcrafts</a></p>
         <p>TikTok: <a href="https://tiktok.com/@dwarcrafts" class="underline">@dwarcrafts</a></p>
         <p>X: <a href="https://x.com/dwarcrafts" class="underline">@dwarcrafts</a></p>
@@ -114,6 +148,11 @@
     </div>
     <p class="text-center mt-8 text-sm">&copy; 2025 DwarCrafts. All Rights Reserved.</p>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/254111506427" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
