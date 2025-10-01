@@ -17,6 +17,8 @@ img.product-img { max-width: 100px; border-radius: 5px; }
 <div class="container">
     <h1 class="mb-4">DwarCrafts Admin Dashboard</h1>
 
+    <button id="logoutBtn" class="btn btn-danger mb-3">Logout</button>
+
     <!-- CATEGORY MANAGEMENT -->
     <div class="card p-3">
         <h3>Manage Categories</h3>
@@ -62,7 +64,29 @@ img.product-img { max-width: 100px; border-radius: 5px; }
     </div>
 </div>
 
-<!-- LINK TO admin.js -->
+<!-- Firebase Auth Protection -->
+<script type="module">
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { app } from "./firebase-config.js";
+
+const auth = getAuth(app);
+
+// Protect this page
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "login.html"; // Redirect if not logged in
+  }
+});
+
+// Logout button
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+});
+</script>
+
+<!-- Admin Logic -->
 <script type="module" src="admin.js"></script>
 </body>
 </html>
